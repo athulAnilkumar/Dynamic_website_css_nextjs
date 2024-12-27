@@ -1,0 +1,266 @@
+body {
+  display: flex;
+  /* Webkit Browsers */
+  ::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar color */
+    border-radius: 10px; /* Rounded corners */
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Hover effect */
+  }
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.login-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  height: 100vh;
+  width: 100%;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  .login-wrapper {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login-section-wrapper {
+      height: 35vh;
+      display: grid;
+      gap: 35px;
+      padding: 17px;
+      border: dashed;
+      border-color: lavender;
+      border-width: thin;
+      min-height: fit-content;
+      min-width: fit-content;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      width: 93px;
+      height: 37px;
+      margin-left: 182px;
+      background-color: white;
+      border-radius: 13px;
+      border-color: rgba(46, 80, 217, 0.2901960784);
+      color: #b43bef;
+      text-transform: capitalize;
+    }
+
+    button:hover {
+      background-color: lightblue;
+    }
+
+    h2 {
+      color: darkmagenta;
+      padding-left: 92px;
+      text-transform: uppercase;
+    }
+
+    h2:hover {
+      color: blueviolet;
+    }
+
+    input {
+      width: 275px;
+      border-color: #07cdff5e;
+      border-radius: 9px;
+    }
+
+    input:focus {
+      width: 275px;
+      background-color: rgb(228, 238, 245);
+    }
+  }
+
+  .image-wrapper {
+    width: 50%;
+    height: 100vh;
+
+    img {
+      width: 100%;
+      height: 100vh;
+    }
+  }
+}
+
+@media all and (max-width: 688px) {
+  .login-container {
+    flex-direction: column;
+
+    .login-section-wrapper {
+      width: 100%;
+      height: 50vh;
+    }
+
+    .image-wrapper {
+      width: 100%;
+      height: 50vh;
+
+      img {
+        width: 100%;
+        height: 50vh;
+      }
+    }
+  }
+}
+
+.layout-container {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+
+  font-family: "Courier New", monospace;
+
+  .header-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    background-color: #06201d;
+    top: 0;
+
+    .header-layout {
+      display: flex;
+      flex-grow: 1;
+      gap: 45px;
+      justify-content: flex-start;
+
+      .profile-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #ffff;
+      }
+
+      .selected {
+        color: red;
+      }
+    }
+  }
+
+  .sidebar-container {
+    position: absolute;
+    width: 15%;
+    height: 92%;
+    background-color: #06201d;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s;
+
+    .logout-btn {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 8%;
+      cursor: pointer;
+      color: aliceblue;
+      font-weight: bolder;
+      width: 80%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    .expand-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 9px;
+      color: aliceblue;
+      font-size: x-large;
+      cursor: pointer;
+    }
+  }
+
+  .sidebar-container.collapsed {
+    width: 8%;
+    transition: all 0.3s;
+  }
+
+  .content-area {
+    display: flex;
+    height: 92vh;
+    margin-left: 15%;
+    margin-top: 8vh;
+    transition: all 0.3s;
+    width: 100%;
+    overflow: auto;
+    background-color: aliceblue;
+  }
+
+  .content-area.sidebar-collapsed {
+    margin-left: 8%;
+    transition: all 0.3s;
+  }
+}
+
+.home-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+
+  .grid-container {
+    width: -webkit-fill-available;
+    min-width: 300px;
+    margin: 0px 100px 0px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    label {
+      color: #313997;
+      font-weight: bold;
+    }
+  }
+
+  .grid-main {
+    overflow: auto;
+  }
+
+  .grid-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .other-container {
+    margin: 106px 100px 0px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.carousel-home-container {
+  width: 100%;
+  margin: 30px;
+
+  img {
+    width: 100%;
+    height: 80vh;
+  }
+}
